@@ -5,12 +5,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: ammaraskar/gcc-problem-matcher@master
-      - name: Compile
-        run: |
-          echo "::group::gcc"
-          gcc -o hello_word hello_world.c
-          echo "::endgroup::"
+      - uses: thierry-martinez/custom-action-example@master
+        with:
+          source: hello_world.c
+          target: hello_world
       - name: Test
         run: |
           ./hello_word > output.txt
