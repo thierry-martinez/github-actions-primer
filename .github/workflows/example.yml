@@ -11,5 +11,5 @@ jobs:
           target: hello_world
       - name: Test
         run: |
-          ./hello_word > output.txt
+          ./hello_world > output.txt
           diff output.txt excepted.txt
