@@ -5,13 +5,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Compile
-        run: |
-          echo "::add-matcher::gcc_matcher.json"
-          echo "::group::gcc"
-          gcc -o hello_word hello_world.c
-          echo "::endgroup::"
+      - uses: thierry-martinez/custom-action-example@main
+        with:
+          source: hello_world.c
+          target: hello_world
       - name: Test
         run: |
-          ./hello_word > output.txt
+          ./hello_world > output.txt
           diff output.txt excepted.txt
