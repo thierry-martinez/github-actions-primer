@@ -5,7 +5,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: thierry-martinez/custom-action-example@master
+      - uses: thierry-martinez/custom-action-example@main
         with:
           source: hello_world.c
           target: hello_world
