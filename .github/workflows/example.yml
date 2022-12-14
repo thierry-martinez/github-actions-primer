@@ -5,9 +5,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - uses: ammaraskar/gcc-problem-matcher@master
       - name: Compile
         run: |
-          echo "::add-matcher::gcc_matcher.json"
           echo "::group::gcc"
           gcc -o hello_word hello_world.c
           echo "::endgroup::"
